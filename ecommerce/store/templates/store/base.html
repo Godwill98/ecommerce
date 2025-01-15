@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	  <title> Edenthought </title>
+	  <title> BuyUza </title>
 
 
 
@@ -51,7 +51,7 @@
 
         <a class="navbar-brand main-heading text-white" href="{% url 'store' %}"> 
                 
-        &nbsp; &nbsp; Edenthought 
+        &nbsp; &nbsp; BuyUza
         
         </a>
 
@@ -90,6 +90,16 @@
                             <a class="dropdown-item" href="{% url 'store' %}"> All </a>
                         
                         </li>
+
+                        {% for category in all_categories %}
+
+                            <li>
+                                
+                                <a class="dropdown-item" href=""> {{ category.name  | capfirst}} </a>
+                            
+                            </li>
+
+                        {% endfor %}
                     
         
                     
