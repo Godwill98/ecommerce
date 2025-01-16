@@ -57,25 +57,28 @@
           
 
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+
+
+            {% for product in my_products %}
     
             
     
-            <div class="col">
-              <div class="card shadow-sm">
-                <img class="img-fluid" alt="Responsive image" src="">
-                <div class="card-body">
-                  <p class="card-text">
-                    <a class="text-info text-decoration-none" href=""></a>
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h5> </h5>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}" style="height: 200px; width: 100%; display: block;">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <a class="text-info text-decoration-none" href="">{{ product.title | capfirst }}</a>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h5>Ksh {{ product.price}}</h5>
+                    </div>
                   </div>
                 </div>
+              
               </div>
-            
-            </div>
-    
-            
+      
+            {% endfor %}
     
           </div>
         </div>
